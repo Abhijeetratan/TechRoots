@@ -17,7 +17,7 @@ app.use(morgan('combined')); // Log HTTP requests
 
 // MongoDB connection
 const uri = process.env.MONGODB_URI || 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review';
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
 
@@ -49,6 +49,11 @@ const Review = mongoose.model('Review', reviewSchema);
 // Health check route
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK' });
+});
+
+// Root route
+app.get('/', (req, res) => {
+    res.status(200).send('Welcome to the Review API!'); // Simple welcome message
 });
 
 // Route to submit a new review
