@@ -1,8 +1,11 @@
+// Load environment variables from a .env file
+require('dotenv').config(); // Uncomment this line if you have a .env file
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// require('dotenv').config();
+const morgan = require('morgan'); // for logging HTTP requests
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,13 +13,14 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(morgan('combined')); // Log HTTP requests
 
 // MongoDB connection
+const uri = process.env.MONGODB_URI || 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review'; // Use an environment variable for production
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
-        const uri = 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review';  // Or your MongoDB Atlas URI
-        mongoose.connect(uri)
-            .then(() => console.log('MongoDB connected'))
-            .catch(err => console.error('MongoDB connection error:', err));
 // Review Schema
 const reviewSchema = new mongoose.Schema({
     name: {
@@ -41,6 +45,11 @@ const reviewSchema = new mongoose.Schema({
 
 // Create the Review model
 const Review = mongoose.model('Review', reviewSchema);
+
+// Health check route
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK' });
+});
 
 // Route to submit a new review
 app.post('/reviews', async (req, res) => {
