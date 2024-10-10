@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(morgan('combined')); // Log HTTP requests
 
 // MongoDB connection
-const uri = process.env.MONGODB_URI || 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review'; // Use an environment variable for production
+const uri = process.env.MONGODB_URI || 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review';
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
@@ -80,6 +80,12 @@ app.get('/reviews', async (req, res) => {
         console.error('Error retrieving reviews:', error);
         return res.status(500).json({ success: false, message: 'Error retrieving reviews' });
     }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
 });
 
 // Start the server
