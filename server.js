@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan'); // for logging HTTP requests
+const path = require('path'); // Required for serving static files
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,6 +15,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(morgan('combined')); // Log HTTP requests
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB connection
 const uri = process.env.MONGODB_URI || 'mongodb+srv://doctor123:doctor123@cluster0.nnxbqud.mongodb.net/review';
@@ -53,7 +57,7 @@ app.get('/health', (req, res) => {
 
 // Root route
 app.get('/', (req, res) => {
-    res.status(200).send('Welcome to the Review API!'); // Simple welcome message
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve the index.html file
 });
 
 // Route to submit a new review
