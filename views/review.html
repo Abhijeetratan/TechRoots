@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Feedback Form</title>
+
+    
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
+
    
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,10 +117,19 @@
 </head>
 
 <body>
+      <!-- Spinner Start -->
+      <div id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+          <span class="sr-only">Loading...</span>
+      </div>
+  </div>
+  <!-- Spinner End -->
+   
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><img src="img/icon.png" alt="" height="50px">Tech<span
-                    style="color: #d4af37;">Roots</span></p>
+            <p class="m-0 fw-bold" style="font-size: 35px;"><img src="img/logo.png" alt="" height="50px">Tech<span
+                    style="color: #d4af37;">Roots Club</span></p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             style="border: none;">
@@ -129,13 +143,11 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="review.html" class="dropdown-item">Review</a>
+                        <a href="https://review-790w.onrender.com/" class="dropdown-item">Review</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
                 <a href="#" class="nav-item nav-link">
                     <div id="google_translate_element"></div>
                 </a>
@@ -273,60 +285,43 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
- <!-- Footer Start -->
- <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">Quick Link</h4>
-                <p><a class="text-light" href="about.html">About Us</a></p>
-                <p><a class="text-light" href="contact.html">Contact Us</a></p>
-                <p><a class="text-light" href="">Privacy Policy</a></p>
-                <p><a class="text-light" href="">Terms & Condition</a></p>
-                <p><a class="text-light" href="">FAQs & Help</a></p>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">Contact</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>delhi</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 9643937497</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>techroots@gmail.com</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-white" href="about.html">About Us</a></p>
+                    <p><a class="text-white" href="contact.html">Contact Us</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <a class="text-white mb-2"><i class="fa fa-map-marker-alt me-3"></i>delhi</a><br>
+                    <a class="text-white mb-2"href="tel:9643937497"><i class="fa fa-phone-alt me-3"></i>+91 9643937497</a><br>
+                    <a class="text-white mb-2"href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqbzPsvPLHzPpbLzFkMHPzrlJZdQnlHcPHtBZNLmtBhpBGrDPcMMXlRFfgkLLHWbxhFjWL"target="_blank"><i class="fa fa-envelope me-3"></i>techrootsclub@gmail.com</a>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/techrootsclub/"target="_blank"><i class="fab fa-instagram"></i></a>
+                        <p class="text-white">Follow us on Instagram</p>
+
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">TechRoots Club </a>, All Right Reserved.
 
-            <div class="col-lg-4 col-md-6">
-                <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
-                <p>Subscribe now and join our growing community of learners committed to lifelong education! </p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <form action="#">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
-                            placeholder="Your email" required>
-                        <button type="submit"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
-                                href="mailto:keertidvcorai@gmail.com">Subscribe</a></button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="index.html">TechRoots</a>, All Right Reserved.
+    <!-- Footer End -->
 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
-
-
+   <!-- Back to Top -->
+   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -336,8 +331,8 @@
 <script src="lib/waypoints/waypoints.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-<!-- Template Javascript -->
-<script src="js/main.js"></script>
+   <!-- Template Javascript -->
+   <script src="js/main.js"></script>
 </body>
 
 </html>>
