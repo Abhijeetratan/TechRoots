@@ -51,7 +51,7 @@ app.get('/health', (req, res) => {
 });
 
 // Serve the homepage
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     console.log("Home route accessed");
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
