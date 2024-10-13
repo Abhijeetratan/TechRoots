@@ -188,6 +188,33 @@
         opacity: 1;
     }
 }
+<style>
+    
+p.m-0.fw-bold {
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+}
+
+p.m-0.fw-bold img {
+    height: 50px;
+
+}
+
+p.m-0.fw-bold span {
+    color: #d4af37; /* Gold color for "Roots Club" */
+}
+@media (max-width: 767px) {
+    p.m-0.fw-bold {
+        font-size: 20px; /* Adjust font size for mobile */
+    }
+
+    p.m-0.fw-bold img {
+        height: 30px; /* Adjust logo size for mobile */
+    }
+}
+
+</style>
 
 /*** Header carousel ***/
 
