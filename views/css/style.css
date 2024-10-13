@@ -165,19 +165,6 @@
     border: 2px solid #fbdf3f;
 }
 
-p.m-0.fw-bold {
-    font-size: 35px; /* Adjust the font size for mobile */
-    text-align: center; /* Center align the content for mobile */
-}
-
-p.m-0.fw-bold img {
-    height: 50px; /* Adjust the logo height for mobile */
-    margin-right: 8px; /* Add some space between the logo and text */
-}
-
-
-
-
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
@@ -201,22 +188,7 @@ p.m-0.fw-bold img {
         opacity: 1;
     }
 }
-/* Mobile CSS */
-@media only screen and (max-width: 768px) {
-    p.m-0.fw-bold {
-        font-size: 26px; /* Adjust the font size for mobile */
-        text-align: center; /* Center align the content for mobile */
-    }
 
-    p.m-0.fw-bold img {
-        height: 40px; /* Adjust the logo height for mobile */
-        margin-right: 8px; /* Add some space between the logo and text */
-    }
-
-    p.m-0.fw-bold span {
-        display: block; /* Ensure TechRoots Club text wraps properly */
-    }
-}
 
 /*** Header carousel ***/
 
