@@ -191,9 +191,10 @@
 <style>
     
 p.m-0.fw-bold {
-    font-size: 35px;
+    font-size: 45px;
     display: flex;
     align-items: center;
+    font-weight:bold;
 }
 
 p.m-0.fw-bold img {
